@@ -1,7 +1,14 @@
-body {
-  background-color: #000;
+/* :root {
+  --dark: #040b14;
+  --white: #fff;
+  --gray: #c6c6c6;
 }
 
-h1 {
-  color: #fff;
+body {
+  background-color: var(--dark) !important;
+  color: var(--white);
+} */
+
+a {
+  text-decoration: none !important;
 }
