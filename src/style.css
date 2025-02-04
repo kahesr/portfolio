@@ -1,14 +1,9 @@
-/* :root {
-  --dark: #040b14;
-  --white: #fff;
-  --gray: #c6c6c6;
-}
-
-body {
-  background-color: var(--dark) !important;
-  color: var(--white);
-} */
-
-a {
-  text-decoration: none !important;
+.hero {
+  background: linear-gradient(
+      61deg,
+      rgba(0, 0, 0, 0.5) 100%,
+      rgba(255, 255, 255, 0.5) 0%
+    ),
+    url("../assets/img/profile-image.jpg") center/cover no-repeat;
+  color: white;
 }
