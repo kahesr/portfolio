@@ -8,6 +8,10 @@
   color: white;
 }
 
+section {
+  padding: 40px;
+}
+
 .material-symbols-outlined {
   font-size: 36px;
   color: blueviolet;
@@ -63,4 +67,29 @@
   100% {
     left: 90%;
   }
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill h3 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(217, 217, 217, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-bar {
+  width: 0; /* Start at 0 */
+  height: 100%;
+  background: linear-gradient(to right, #ff8c00, #ff4500);
+  border-radius: 5px;
 }
