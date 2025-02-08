@@ -1,15 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Skill data: name and percentage
-  const skills = [
-    { name: "HTML", level: "100%" },
-    { name: "CSS", level: "90%" },
-    { name: "JavaScript", level: "80%" },
-    { name: "WordPress/CMS", level: "95%" },
-    { name: "Photoshop", level: "60%" },
-    { name: "php", level: "50%" },
-  ];
-
-  const container = document.querySelector("#skills-container"); // Select the parent row
+function createSkillElements() {
+  const skillsContainer = document.querySelector("#skills-container"); // Select the parent row
 
   // Create two column divs
   const col1 = document.createElement("div");
@@ -17,8 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const col2 = document.createElement("div");
   col2.classList.add("col-sm-6");
-
-  const skillElements = []; // Store skill elements in order (so the skill-bar assignment do not be dependant on the order of skills distribution)
 
   skills.forEach((skill, index) => {
     // Create the skill element
@@ -46,17 +34,48 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Append columns to the row container
-  container.appendChild(col1);
-  container.appendChild(col2);
+  // Append columns to the row skillsContainer
+  skillsContainer.appendChild(col1);
+  skillsContainer.appendChild(col2);
 
-  // Animate progress bars using stored elements
-  setTimeout(() => {
-    skillElements.forEach((skillDiv, index) => {
-      let value = parseInt(skills[index].level);
-      let bar = skillDiv.querySelector(".skill-bar");
-      bar.style.width = value + "%";
-      bar.style.transition = "width 1.5s ease-in-out";
-    });
-  }, 200);
-});
+  setupIntersectionObserver();
+}
+
+function setupIntersectionObserver() {
+  const skillsContainer = document.querySelector("#skills-container");
+  const observer = new IntersectionObserver(animateSkillBars, {
+    threshold: 0.5,
+  });
+
+  observer.observe(skillsContainer);
+}
+
+// Function to animate skill bars when visible
+function animateSkillBars(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      skillElements.forEach((skillDiv, index) => {
+        let value = parseInt(skills[index].level);
+        let bar = skillDiv.querySelector(".skill-bar");
+        bar.style.width = value + "%";
+        bar.style.transition = "width 1.5s ease-in-out";
+      });
+
+      observer.disconnect(); // Stops observing after animation is triggered
+    }
+  });
+}
+
+///////////////////////////////////////////
+const skills = [
+  { name: "HTML", level: "100%" },
+  { name: "CSS", level: "90%" },
+  { name: "JavaScript", level: "80%" },
+  { name: "WordPress/CMS", level: "95%" },
+  { name: "Photoshop", level: "60%" },
+  { name: "php", level: "50%" },
+];
+
+const skillElements = []; // Store skill elements in order (so the skill-bar assignment do not be dependant on the order of skills distribution)
+
+document.addEventListener("DOMContentLoaded", createSkillElements);
