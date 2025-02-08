@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: "HTML", level: "100%" },
     { name: "CSS", level: "90%" },
     { name: "JavaScript", level: "80%" },
-    { name: "WordPress", level: "95%" },
-    { name: "Node.js", level: "70%" },
-    { name: "Python", level: "85%" },
+    { name: "WordPress/CMS", level: "95%" },
+    { name: "Photoshop", level: "60%" },
+    { name: "php", level: "50%" },
   ];
 
   const container = document.querySelector("#skills-container"); // Select the parent row
@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const col2 = document.createElement("div");
   col2.classList.add("col-sm-6");
+
+  const skillElements = []; // Store skill elements in order (so the skill-bar assignment do not be dependant on the order of skills distribution)
 
   skills.forEach((skill, index) => {
     // Create the skill element
@@ -34,6 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
 
+    skillElements.push(skillDiv); // Store skillDiv for animation
+
     // Distribute skills
     if (index < skills.length / 2) {
       col1.appendChild(skillDiv);
@@ -46,11 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
   container.appendChild(col1);
   container.appendChild(col2);
 
-  // Animate progress bars
+  // Animate progress bars using stored elements
   setTimeout(() => {
-    document.querySelectorAll(".skill").forEach((skill, index) => {
+    skillElements.forEach((skillDiv, index) => {
       let value = parseInt(skills[index].level);
-      let bar = skill.querySelector(".skill-bar");
+      let bar = skillDiv.querySelector(".skill-bar");
       bar.style.width = value + "%";
       bar.style.transition = "width 1.5s ease-in-out";
     });
