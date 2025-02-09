@@ -93,3 +93,50 @@ section {
   background: linear-gradient(to right, #ff8c00, #ff4500);
   border-radius: 5px;
 }
+
+.info-wrap,
+.form {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 40px;
+}
+
+.contact .icon {
+  padding: 10px;
+  border-radius: 50%;
+  background: color-mix(in srgb, blueviolet, transparent 92%);
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact .icon .material-symbols-outlined {
+  font-size: 25px;
+}
+
+.info-item {
+  margin-bottom: 30px;
+}
+
+.info-item:hover {
+  .icon {
+    background: color-mix(in srgb, blueviolet, transparent 30%);
+  }
+  .material-symbols-outlined {
+    color: #fff;
+  }
+}
+
+.email-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.form-field {
+  border-radius: 5px;
+  border: 1px solid #cecece;
+  width: 100%;
+  padding: 5px;
+  margin-top: 3px;
+}

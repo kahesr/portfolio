@@ -46,15 +46,17 @@
 	<!-- About Section -->
 	<section id="about">
 		<!-- section Title -->
-		<h2>about</h2>
-		<div class="animated-divider">
-			<div class="light"></div>
+		<div class="title container-fluid p-0">
+			<h2>about</h2>
+			<div class="animated-divider">
+				<div class="light"></div>
+			</div>
+			<p>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum rerum ducimus explicabo! Harum veritatis
+				placeat sed dolore voluptatum commodi quis earum fugiat corporis, officiis natus, repudiandae aut numquam
+				velit molestiae.
+			</p>
 		</div>
-		<p>
-			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum rerum ducimus explicabo! Harum veritatis
-			placeat sed dolore voluptatum commodi quis earum fugiat corporis, officiis natus, repudiandae aut numquam
-			velit molestiae.
-		</p>
 		<!-- End section Title -->
 		<div class="container-fluid p-0 ">
 			<div class="row gy-4 justify-content-center">
@@ -139,7 +141,7 @@
 
 	<!-- Skills Section -->
 	<section id="skills">
-		<div class="container-fluid p-0">
+		<div class="title container-fluid p-0">
 			<h2 data-aos="fade-up">Skills</h2>
 			<div class="animated-divider">
 				<div class="light"></div>
@@ -154,6 +156,79 @@
 		<!-- Empty row where skills will be added -->
 	</section>
 	<!-- /Skills Section -->
+
+	<!-- Contact section -->
+	<section id="contact" class="contact">
+		<div class="title container-fluid p-0" data-aos="fade-up">
+			<h2>Contact</h2>
+			<div class="animated-divider">
+				<div class="light"></div>
+			</div>
+			<p>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+			</p>
+		</div>
+		<div class="container-fluid p-0" data-aos="fade-up" data-aos-delay="100"></div>
+		<div class="row g-3">
+			<div class="col-md-5">
+				<div class="info-wrap">
+					<div class="info-item d-flex align-items-center">
+						<div class="icon"><span class="material-symbols-outlined">
+								location_on
+							</span></div>
+						<div class="text">
+							<h3>Address</h3>
+							<p>3177-3179 Chemin St Sulpice, Montréal, QC H3Y 2B9, Canada</p>
+						</div>
+					</div>
+					<div class="info-item d-flex align-items-center">
+						<div class="icon"><span class="material-symbols-outlined">
+								mail
+							</span></div>
+						<div class="text">
+							<a href="mailto: saradevworks@gmail.com" class="email-link">
+								<h3>Email</h3>
+								<p>saradevworks@gmail.com</p>
+							</a>
+						</div>
+					</div>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.857772496711!2d-73.59369914893934!3d45.49280876379695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a1178f410c1%3A0x6a67ae0715a2f0a1!2s3177-3179%20Chemin%20St%20Sulpice%2C%20Montr%C3%A9al%2C%20QC%20H3Y%202B9%2C%20Canada!5e0!3m2!1sen!2s!4v1739106410878!5m2!1sen!2s"
+						width="100%" height="270px" style="border:0;" allowfullscreen="" loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div class="form">
+					<form action="#">
+						<div class="row g-3">
+							<div class="col-md-6">
+								<label for="name" class="d-block">Your Name</label>
+								<input type="text" name="name" id="name" placeholder=" Name" class="form-field" required>
+							</div>
+							<div class="col-md-6">
+								<label for="email" class="d-block">Your Email</label>
+								<input type="text" name="email" id="email" placeholder="Email" class="form-field" required>
+							</div>
+							<div class="col-md-12">
+								<label for="subject" class="d-block">Subject</label>
+								<input type="text" name="subject" id="subject" placeholder="Subject" class="form-field" required>
+							</div>
+							<div class="col-md-12">
+								<label for="message" class="d-block">Message</label>
+								<textarea rows="5" name="message" id="message" placeholder="How can I help you" class="form-field"
+									required></textarea>
+							</div>
+							<div class="col-md-12 text-center">
+								<button type="submit" class="form-field">Contact</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /Contact section -->
 
 	<script src="src/index.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
