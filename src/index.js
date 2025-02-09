@@ -20,7 +20,9 @@ function createSkillElements() {
         <span class="skill-lvl">${skill.level}</span>
       </div>
       <div class="progress-bar">
-        <div class="skill-bar" style="width: 0;"></div>
+        <div data-aos="fade-right" data-aos-duration="1000" data-aos-offset="0" data-aos-delay="300" class="skill-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: ${parseInt(
+          skill.level
+        )}%;"></div>
       </div>
     `;
 
@@ -37,33 +39,6 @@ function createSkillElements() {
   // Append columns to the row skillsContainer
   skillsContainer.appendChild(col1);
   skillsContainer.appendChild(col2);
-
-  setupIntersectionObserver();
-}
-
-function setupIntersectionObserver() {
-  const skillsContainer = document.querySelector("#skills-container");
-  const observer = new IntersectionObserver(animateSkillBars, {
-    threshold: 0.5,
-  });
-
-  observer.observe(skillsContainer);
-}
-
-// Function to animate skill bars when visible
-function animateSkillBars(entries, observer) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      skillElements.forEach((skillDiv, index) => {
-        let value = parseInt(skills[index].level);
-        let bar = skillDiv.querySelector(".skill-bar");
-        bar.style.width = value + "%";
-        bar.style.transition = "width 1.5s ease-in-out";
-      });
-
-      observer.disconnect(); // Stops observing after animation is triggered
-    }
-  });
 }
 
 ///////////////////////////////////////////
